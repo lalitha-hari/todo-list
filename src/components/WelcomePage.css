@@ -1,37 +1,78 @@
-.welcome-container {
+.todo-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end; /* Align content to the right */
-    height: 100vh;
-    padding-right: 50px; /* Space from the right edge */
-    background-image: url('https://i.pinimg.com/originals/ac/54/a1/ac54a128942c750799c2c1fe144d2467.jpg'); /* Replace with your image URL */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* Ensure the container takes up the full viewport height */
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); /* Gradient background */
+    background-size: cover; /* Ensure the background covers the entire container */
+    background-position: center; /* Keep the background centered */
     background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 20px; /* Add padding for content spacing */
 }
 
-.welcome-title {
+.todo-title {
     font-size: 2.5rem;
-    color: #ffffff; /* White text for contrast */
-    margin-bottom: 20px; /* Space below the title */
-    margin-right: 180px; /* Adjust the space from the right edge */
+    color: white; /* White text for contrast */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
+    margin-bottom: 100px;
 }
 
-.proceed-button {
-    padding: 10px 20px;
-    font-size: 1rem;
+.option-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Add space between buttons */
+    margin-bottom: 30px; /* Add margin to the bottom */
+}
+
+button {
+    background-color: rgb(145, 85, 201);
     color: white;
-    background-color: #007bff;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
-    margin-right: 400px; /* Align button with the title */
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect with shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+    width: 200px; /* Set width for uniform button size */
 }
 
-.proceed-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+button:hover {
+    background-color: #a375d1; /* Change color on hover */
+    transform: translateY(-4px); /* Lift effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+button:active {
+    transform: translateY(2px); /* Button depression effect on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow on click */
+}
+
+.task-card {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for task cards */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-task-card {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); /* Gradient background for the "Add Task" card */
+    margin-bottom: 40px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 100px;
 }

@@ -1,5 +1,5 @@
-import './WelcomePage.css';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import AddTask from './AddTask'; // Import the AddTask component
 
 const TodoApp = () => {
@@ -29,14 +29,14 @@ const TodoApp = () => {
 
             {/* Option buttons */}
             <div className="option-buttons">
-                <button onClick={() => { setCurrentView('viewTask'); setShowAddTaskForm(false); }}>View Task</button>
-                <button onClick={() => setShowAddTaskForm(true)}>Add Task</button>
+                <Link to="/"><button>Home</button></Link> {/* Home Button */}
+                <Link to="/add-task"><button>Add Task</button></Link> {/* Link to Add Task page */}
                 <button onClick={() => setCurrentView('pendingTasks')}>Pending Tasks</button>
                 <button onClick={() => setCurrentView('completedTasks')}>Completed Tasks</button>
             </div>
 
             {/* Conditional rendering of Add Task form */}
-            {showAddTaskForm && <AddTask addTask={addTask} />}
+            {currentView === 'addTask' && <AddTask addTask={addTask} />}
 
             {/* Conditional rendering of views */}
             {currentView === 'viewTask' && (
