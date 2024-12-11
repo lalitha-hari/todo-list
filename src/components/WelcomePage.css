@@ -1,0 +1,37 @@
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Align content to the right */
+    height: 100vh;
+    padding-right: 50px; /* Space from the right edge */
+    background-image: url('https://i.pinimg.com/originals/ac/54/a1/ac54a128942c750799c2c1fe144d2467.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    color: #ffffff; /* White text for contrast */
+    margin-bottom: 20px; /* Space below the title */
+    margin-right: 180px; /* Adjust the space from the right edge */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
+}
+
+.proceed-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 400px; /* Align button with the title */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.proceed-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
