@@ -1,36 +1,43 @@
+// src/components/AddTask.js
 import React, { useState } from 'react';
 
 const AddTask = ({ addTask }) => {
-    const [newTask, setNewTask] = useState({ title: '', description: '', dueDate: '' });
+  const [taskTitle, setTaskTitle] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
+  const [dueDate, setDueDate] = useState('');
 
-    const handleAddTask = () => {
-        if (newTask.title.trim() === '') return;
-        addTask(newTask);
-        setNewTask({ title: '', description: '', dueDate: '' }); // Clear the form after adding task
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask({ title: taskTitle, description: taskDescription, dueDate });
+    setTaskTitle('');
+    setTaskDescription('');
+    setDueDate('');
+  };
 
-    return (
-        <div className="task-card add-task-card">
-            <h2>Add New Task</h2>
-            <input
-                type="text"
-                placeholder="Task Title"
-                value={newTask.title}
-                onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            />
-            <textarea
-                placeholder="Task Description"
-                value={newTask.description}
-                onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-            />
-            <input
-                type="date"
-                value={newTask.dueDate}
-                onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
-            />
-            <button onClick={handleAddTask}>Add Task</button>
-        </div>
-    );
+  return (
+    <div>
+      <h2>Add New Task</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Task Title"
+          value={taskTitle}
+          onChange={(e) => setTaskTitle(e.target.value)}
+        />
+        <textarea
+          placeholder="Task Description"
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
+        />
+        <input
+          type="date"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  );
 };
 
 export default AddTask;
